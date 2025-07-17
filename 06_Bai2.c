@@ -84,7 +84,6 @@ int main() {
                 fgets(text, MAX_LEN, stdin);
                 text[strcspn(text, "\n")] = 0;
                 push(&clipboard, text);
-                strcpy(current, text);
                 clear(&redo);
                 break;
 
@@ -143,8 +142,6 @@ int main() {
                             push(&tempStack, temp);
                         }
                     }
-
-
                     while (!isEmpty(&tempStack)) {
                         char* temp = pop(&tempStack);
                         if (temp != NULL) {
